@@ -3,13 +3,12 @@ import React, { useState }  from 'react';
 import logo from '../assets/logo.svg';
 import './css/Login.css'
 
-export default function Login() {
+export default function Login(props) {
     const [username, setUsername] = useState('');
 
     function handleSubmit(e) {
         e.preventDefault();
-
-        console.log(username);
+        props.history.push('/main');
     }
     
     return (
