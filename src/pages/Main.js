@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import link from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import api from '../services/api';
 import logo from '../assets/logo.svg';
@@ -31,7 +31,7 @@ export default function Main(props) {
             }
         })
 
-        setUsers(users.filter(user => user._id != id));
+        setUsers(users.filter(user => user._id !== id));
     }
 
     async function handleDislike(id) {
@@ -41,14 +41,14 @@ export default function Main(props) {
             }
         })
         
-        setUsers(users.filter(user => user._id != id));
+        setUsers(users.filter(user => user._id !== id));
     }
 
     return (
         <div className="main-container">
-            <link to="/">
+            <Link to="/">
             <img src={logo} alt="Tindev"/>
-            </link>
+            </Link>
             { users.length > 0 ? (
             <ul>
                 {users.map(user => (
